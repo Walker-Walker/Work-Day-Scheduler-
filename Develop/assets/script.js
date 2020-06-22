@@ -6,9 +6,19 @@
 // with getting value back must parse the string..JSON.parse(constructor) *local storage only stores strings* 
 
 
-
-
 var userTextInput = []; //empty array for userInputs of class: description 
+
+// descriptionColor = function() { // add css color backgrounds (bootstrap) for past due , due today, and due in future ... 
+// var toDoColor = $("#hour9").addClass("bg-secondary text-black")
+// var doTodayColor = $("#hour9").addClass("bg-danger text-black")
+// var doInTheFutureColor = $("#hour9").addClass("bg-success text-black")
+// var currentTime = moment()
+
+// if(insert variable here ===currentTime){
+//     var doTodayColor = $("#hour9").addClass("bg-danger text-black")
+// }
+
+
 
 
 $(document).ready(function () {    //document function call for all logic code 
@@ -75,4 +85,3 @@ $(document).ready(function () {    //document function call for all logic code
     
 });
 
-// $("#list-" + taskList).append(taskLi);
