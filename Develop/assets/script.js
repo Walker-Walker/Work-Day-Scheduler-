@@ -20,46 +20,59 @@ $(document).ready(function () {    //document function call for all logic code
 
 
 
-    $(".saveBtn").on('click', function() { // caputures user input for each task description returns the value and trims it. 
-        
+    $(".saveBtn").on('click', function (event) { // caputures user input for each task description returns the value and trims it. 
+       event.preventDefault();
+      
         var hour = $(this).attr("title");
         console.log(hour);
         var timeSlotClassName = "." + hour;
 
-        var description = $ (timeSlotClassName ).val().trim()//append() to text area where you want it to show up when pulled from local storage
+        var description = $(timeSlotClassName).val().trim()//append() to text area where you want it to show up when pulled from local storage
 
-        console.log('our current this ',this)
-         console.log('our appointment: ', description)
+        console.log('our current this ', this)
+        console.log('our appointment: ', description)
 
-        
-        
+
+
 
         console.log(hour);
 
-        var timeBlockValues = { 
-       // variable set to a object with constructors inside of timeslot and text. 
-            timeSlot: hour,         
-            text: description       
+        var timeBlockValues = {
+            // variable set to a object with constructors inside of timeslot and text. 
+            timeSlot: hour,
+            text: description
         }
-       
+
         console.log("OUR  schedule:\n ", timeBlockValues)
         userTextInput.push(timeBlockValues)             //pushes timeBlockValues object into userTexInput array.
-        console.log(userTextInput)
+        // console.log(userTextInput)
+
+
+        localStorage.setItem("userTextInput", JSON.stringify(userTextInput));
+        
+       
+    });
+
+    var loadUserInput = function () {
+       
+        var userTextInput = JSON.parse(localStorage.getItem("userTextInput"));
+        console.log("Test: "+userTextInput[0].timeSlot);
+        console.log(userTextInput[0].text);
+       $("#hour"+userTextInput[0].timeSlot).append(userTextInput[0].text);
+       $("#hour"+userTextInput[1].timeSlot).append(userTextInput[1].text); 
+       $("#hour"+userTextInput[2].timeSlot).append(userTextInput[2].text); 
+       $("#hour"+userTextInput[3].timeSlot).append(userTextInput[3].text); 
+       $("#hour"+userTextInput[4].timeSlot).append(userTextInput[4].text); 
+       $("#hour"+userTextInput[5].timeSlot).append(userTextInput[5].text); 
+       $("#hour"+userTextInput[6].timeSlot).append(userTextInput[6].text); 
+       $("#hour"+userTextInput[7].timeSlot).append(userTextInput[7].text); 
+       
         
 
-        localStorage.setItem("userTextInput", JSON.stringify(userTextInput)); 
-        loadUserInput();
-    });
-   
-   var loadUserInput = function () {
+    }
 
-      JSON.parse(localStorage.getItem("userTextInput"));
+    loadUserInput();
     
-   
-    $(".description").append(userTextInput);
-   }
-    
-
 });
 
 // $("#list-" + taskList).append(taskLi);
