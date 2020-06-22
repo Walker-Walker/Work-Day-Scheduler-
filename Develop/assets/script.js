@@ -8,6 +8,7 @@
 
 var userTextInput = []; //empty array for userInputs of class: description 
 
+
 // descriptionColor = function() { // add css color backgrounds (bootstrap) for past due , due today, and due in future ... 
 // var toDoColor = $("#hour9").addClass("bg-secondary text-black")
 // var doTodayColor = $("#hour9").addClass("bg-danger text-black")
@@ -18,6 +19,23 @@ var userTextInput = []; //empty array for userInputs of class: description
 //     var doTodayColor = $("#hour9").addClass("bg-danger text-black")
 // }
 
+
+// $(".time-block").each(function() {
+//     var blockHour = parseInt($(this).attr("id"));
+
+//     if (blockHour < currentHour) {
+//       $(this).addClass("past");
+//     } 
+//     else if (blockHour === currentHour) {
+//       $(this).removeClass("past");
+//       $(this).addClass("present");
+//     } 
+//     else {
+//       $(this).removeClass("past");
+//       $(this).removeClass("present");
+//       $(this).addClass("future");
+//     }
+//   });
 
 
 
